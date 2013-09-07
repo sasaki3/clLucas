@@ -1,0 +1,47 @@
+ubuntu 64bit
+/opt/AMDAPP/samples/opencl/cpp_cl/app/clLucas-master$ pwd
+/opt/AMDAPP/samples/opencl/cpp_cl/app/clLucas-master
+/opt/AMDAPP/samples/opencl/cpp_cl/app/clLucas-master$ ls
+CUDALucas.c  Kernels.cl   Kernels.hpp  README.md
+Install.txt  Kernels.cpp  Makefile
+/opt/AMDAPP/samples/opencl/cpp_cl/app/clLucas-master$ make
+mkdir -p depends/x86_64
+perl ../../../../../make/fastdep.pl -I. -I../../../../../include  -I../../../../../samples/opencl/SDKUtil/include  -I../../../../../samples/bolt/BoltUtil/include  -I../../../../../samples/C++Amp/AmpUtil/include --obj-suffix='.o' --obj-prefix='build/debug/x86_64//' CUDALucas.c > depends/x86_64/CUDALucas.depend
+mkdir -p build/debug/x86_64/
+Building build/debug/x86_64//CUDALucas.o
+g++  -Wpointer-arith   -Wfloat-equal -O3 -Wno-conversion-null -Wno-write-strings -Wno-pointer-arith -I /opt/AMDAPP/include/ -I /opt/clFFT-2.0/include -I /opt/clFFT-2.0/src/include -g3 -ffor-scope   -I  ../../../../../samples/opencl/SDKUtil/include  -I  ../../../../../samples/bolt/BoltUtil/include  -I  ../../../../../samples/C++Amp/AmpUtil/include -I  "/opt/AMDAPP/include" -I  ../../../../../include  -o build/debug/x86_64//CUDALucas.o -c  CUDALucas.c
+Building build/debug/x86_64/CUDALucas
+g++ -o build/debug/x86_64/CUDALucas build/debug/x86_64//CUDALucas.o -lpthread -ldl -L/usr/X11R6/lib  -O3 /opt/clFFT-2.0/library/libclFFT.so -lOpenCL   -lSDKUtil  -lOpenCL   -L../../../../../lib/x86_64  -L../../../../../TempSDKUtil/lib/x86_64 -L"/opt/AMDAPP/lib/x86_64"  
+install -D build/debug/x86_64/CUDALucas ../../../../../samples/opencl/bin/x86_64/CUDALucas
+for f in Kernels.cl; do \
+		install -D $f ../../../../../samples/opencl/bin/x86_64/$f; \
+	done
+/opt/AMDAPP/samples/opencl/cpp_cl/app/clLucas-master$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/clFFT-2.0/library/
+/opt/AMDAPP/samples/opencl/cpp_cl/app/clLucas-master$ ../../../../../samples/opencl/bin/x86_64/CUDALucas 216091
+Platform :Advanced Micro Devices, Inc.
+Device 0 : Capeverde
+
+
+start M216091 fft length = 12288
+Iteration 10000 M( 216091 )C, 0x30247786758b8792, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006714 (0:33 real, 3.3262 ms/iter, ETA 11:05)
+Iteration 20000 M( 216091 )C, 0x13e968bf40fda4d7, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006714 (0:10 real, 0.9893 ms/iter, ETA 3:07)
+Iteration 30000 M( 216091 )C, 0x540772c2abb7833a, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006714 (0:10 real, 0.9966 ms/iter, ETA 2:59)
+Iteration 40000 M( 216091 )C, 0xc26da9695ac418c1, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006714 (0:10 real, 0.9997 ms/iter, ETA 2:49)
+Iteration 50000 M( 216091 )C, 0x95ce3ff44abdd1e5, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006714 (0:10 real, 1.0411 ms/iter, ETA 2:46)
+Iteration 60000 M( 216091 )C, 0x99aa87c495daffe7, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006714 (0:11 real, 1.0726 ms/iter, ETA 2:40)
+Iteration 70000 M( 216091 )C, 0x505d249be3145893, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006714 (0:11 real, 1.1041 ms/iter, ETA 2:34)
+Iteration 80000 M( 216091 )C, 0xddf612c72037b8a1, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006714 (0:11 real, 1.1017 ms/iter, ETA 2:23)
+Iteration 90000 M( 216091 )C, 0xb5d8309a1ce9e2b6, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006714 (0:11 real, 1.0401 ms/iter, ETA 2:04)
+Iteration 100000 M( 216091 )C, 0x4de7f101ee1cb7a5, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006714 (0:10 real, 1.0166 ms/iter, ETA 1:51)
+Iteration 110000 M( 216091 )C, 0x10aa3286c0b03369, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006943 (0:10 real, 1.0609 ms/iter, ETA 1:46)
+Iteration 120000 M( 216091 )C, 0x3981b56788b529e2, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006943 (0:10 real, 0.9772 ms/iter, ETA 1:27)
+Iteration 130000 M( 216091 )C, 0x80438af231f8fccd, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006943 (0:11 real, 1.0511 ms/iter, ETA 1:24)
+Iteration 140000 M( 216091 )C, 0x669382faea06df89, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006943 (0:10 real, 1.0071 ms/iter, ETA 1:10)
+Iteration 150000 M( 216091 )C, 0x1b73cb121df7d6fa, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006943 (0:10 real, 0.9993 ms/iter, ETA 0:59)
+Iteration 160000 M( 216091 )C, 0xb391010f29c70ee1, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006943 (0:09 real, 0.9622 ms/iter, ETA 0:48)
+Iteration 170000 M( 216091 )C, 0x04055d84a77be1d8, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0006943 (0:11 real, 1.0245 ms/iter, ETA 0:40)
+Iteration 180000 M( 216091 )C, 0xe3d74c104f02967d, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0007553 (0:09 real, 0.9799 ms/iter, ETA 0:29)
+Iteration 190000 M( 216091 )C, 0x54b2a8b9cb149f9f, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0007553 (0:10 real, 0.9871 ms/iter, ETA 0:19)
+Iteration 200000 M( 216091 )C, 0xf433496947b7b103, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0007553 (0:10 real, 0.9705 ms/iter, ETA 0:09)
+Iteration 210000 M( 216091 )C, 0xcfe091c8f59f8a7b, n = 12288, CUDALucas v1.66 err = 0.005127 err2 = 0.0007553 (0:10 real, 1.0069 ms/iter, ETA 0:00)
+M( 216091 )P, n = 12288, CUDALucas v1.66
