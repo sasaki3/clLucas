@@ -1,3 +1,5 @@
+
+
 ubuntu 64bit
 /opt/AMDAPP/samples/opencl/cpp_cl/app/clLucas-master$ pwd
 /opt/AMDAPP/samples/opencl/cpp_cl/app/clLucas-master
